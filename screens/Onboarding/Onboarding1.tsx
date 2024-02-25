@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
-const Onboarding1 = ({ navigation }) => {
+const Onboarding1 = ({ onPress }: { onPress: () => void}) => {
   return (
     <View style={styles.container}>
       <Image
@@ -15,9 +15,10 @@ const Onboarding1 = ({ navigation }) => {
           you determine your goals and track your goals
         </Text>
       </View>
-      <Pressable onPress={() => {
-        navigation.navigate('Onboarding2')
-      }} style={styles.circleBtn}>
+      <Pressable
+        onPress={onPress}
+        style={styles.circleBtn}
+      >
         <Image source={require("../../assets/Button.png")} />
       </Pressable>
     </View>
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
   circleBtn: {
     position: "absolute",
     bottom: 50,
-    right: 40
+    right: 40,
   },
 });
 

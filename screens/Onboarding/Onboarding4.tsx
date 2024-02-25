@@ -1,12 +1,12 @@
 import React from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
-const Onboarding4 = () => {
+const Onboarding4 = ({ onPress }: { onPress: () => void}) => {
   return (
     <View style={styles.container}>
       <Image
         style={styles.image}
-        source={require("../../assets/onboarding3.png")}
+        source={require("../../assets/onboarding4.png")}
       />
       <View style={styles.textContainer}>
         <Text style={styles.headingContainer}>Improve Sleep Quality</Text>
@@ -14,7 +14,7 @@ const Onboarding4 = () => {
           Improve the quality of your sleep with us, good quality sleep can bring a good mood in the morning
         </Text>
       </View>
-      <Pressable style={styles.circleBtn}>
+      <Pressable onPress={onPress} style={styles.circleBtn}>
         <Image source={require("../../assets/Button.png")} />
       </Pressable>
     </View>

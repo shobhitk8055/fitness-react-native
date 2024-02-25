@@ -6,6 +6,8 @@ import Onboarding1 from "./screens/Onboarding/Onboarding1";
 import Onboarding2 from "./screens/Onboarding/Onboarding2";
 import Onboarding3 from "./screens/Onboarding/Onboarding3";
 import Onboarding4 from "./screens/Onboarding/Onboarding4";
+import Swiper from "./screens/Onboarding/SwiperScreen";
+import RegisterMain from "./screens/Auth/Register/RegisterMain";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,40 +16,27 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name="RegisterMain"
+          component={RegisterMain}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
           name="Welcome"
           component={Welcome}
           options={{
-            headerShown: false
+            headerShown: false,
           }}
         />
         <Stack.Screen
-          name="Onboarding1"
-          component={Onboarding1}
+          name="OnboardingScreens"
+          component={Swiper}
           options={{
-            headerShown: false
+            headerShown: false,
           }}
-        />
-        <Stack.Screen
-          name="Onboarding2"
-          component={Onboarding2}
-          options={{
-            headerShown: false
-          }}
-        />
-        <Stack.Screen
-          name="Onboarding3"
-          component={Onboarding3}
-          options={{
-            headerShown: false
-          }}
-        />
-        <Stack.Screen
-          name="Onboarding4"
-          component={Onboarding4}
-          options={{
-            headerShown: false
-          }}
-        />
+        />  
+          
       </Stack.Navigator>
     </NavigationContainer>
   );

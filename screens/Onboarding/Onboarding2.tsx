@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
-const Onboarding2 = ({ navigation }) => {
+const Onboarding2 = ({ onPress }: { onPress: () => void}) => {
   return (
     <View style={styles.container}>
       <Image
@@ -14,9 +14,7 @@ const Onboarding2 = ({ navigation }) => {
           Let's keep burning, to achieve yours goals, it hurts only temporarily, if your give up now you will be in pain forever
         </Text>
       </View>
-      <Pressable onPress={() => {
-        navigation.navigate('Onboarding3')
-      }}  style={styles.circleBtn}>
+      <Pressable onPress={onPress} style={styles.circleBtn}>
         <Image source={require("../../assets/Button.png")} />
       </Pressable>
     </View>

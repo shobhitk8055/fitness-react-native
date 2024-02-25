@@ -8,8 +8,7 @@ const Welcome = ({ navigation }) => {
       <Image source={require("../../assets/logo.png")} />
       <View style={styles.buttonContainer}>
         <Button text="Get Started" onPress={() => {
-          navigation.navigate("Onboarding1");
-          console.log('here');
+          navigation.navigate("OnboardingScreens");
         }} />
       </View>
     </View>
