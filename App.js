@@ -6,6 +6,7 @@ import { PaperProvider } from "react-native-paper";
 import Swiper from "./screens/Onboarding/SwiperScreen";
 import RegisterMain from "./screens/Auth/Register/RegisterMain";
 import Login from "./screens/Auth/Login";
+import CompleteProfile from "./screens/Auth/Register/CompleteProfile";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,7 +15,13 @@ export default function App() {
     <PaperProvider>
       <NavigationContainer>
         <Stack.Navigator>
-          
+          <Stack.Screen
+            name="CompleteProfile"
+            component={CompleteProfile}
+            options={{
+              headerShown: false,
+            }}
+          />
           <Stack.Screen
             name="RegisterMain"
             component={RegisterMain}
