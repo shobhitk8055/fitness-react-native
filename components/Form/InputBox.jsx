@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     paddingTop: 20
   },
   input: {
-    height: 55,
+    height: 48,
     backgroundColor: "#F7F8F8",
     paddingHorizontal: 50,
     width: "100%",
@@ -39,10 +39,9 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    top: 36,
+    top: 32,
     left: 15
   },
-
   error: {
     color: "red",
     fontWeight: "300",

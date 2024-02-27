@@ -1,36 +1,22 @@
 import React, { useState } from "react";
 import { Pressable, SafeAreaView, StyleSheet, Text, View } from "react-native";
-import InputBox from "../../../components/Form/InputBox";
-import useInput from "../../../hooks/useInput";
-import ProfileIcon from "../../../components/Icons/ProfileIcon";
-import EmailIcon from "../../../components/Icons/EmailIcon";
-import PassIcon from "../../../components/Icons/PassIcon";
-import Button from "../../../components/Elements/Button";
-import Divider from "../../../components/Auth/Divider";
-import SocialMedia from "../../../components/Auth/SocialMedia";
-import CheckboxComp from "../../../components/Auth/CheckboxComp";
+import InputBox from "../../components/Form/InputBox";
+import useInput from "../../hooks/useInput";
+import EmailIcon from "../../components/Icons/EmailIcon";
+import PassIcon from "../../components/Icons/PassIcon";
+import Button from "../../components/Elements/Button";
+import Divider from "../../components/Auth/Divider";
+import SocialMedia from "../../components/Auth/SocialMedia";
 
-const RegisterMain = ({ navigation }) => {
+const Login = ({ navigation }) => {
   const { value: nameValue, onChangeText: onChangeName } = useInput();
 
   return (
     <SafeAreaView style={styles.mainContainer}>
       <View style={styles.container}>
         <Text style={styles.topText}>Hey there,</Text>
-        <Text style={styles.headingText}>Create an Account</Text>
+        <Text style={styles.headingText}>Welcome Back</Text>
         <View style={styles.formContainer}>
-          <InputBox
-            placeholder="First name"
-            value={nameValue}
-            onChangeText={onChangeName}
-            Icon={ProfileIcon}
-          />
-          <InputBox
-            placeholder="Last name"
-            value={nameValue}
-            onChangeText={onChangeName}
-            Icon={ProfileIcon}
-          />
           <InputBox
             placeholder="Email"
             value={nameValue}
@@ -43,21 +29,23 @@ const RegisterMain = ({ navigation }) => {
             onChangeText={onChangeName}
             Icon={PassIcon}
           />
-          <CheckboxComp />
+          <Text style={styles.forget}>Forget your password?</Text>
         </View>
       </View>
       <View style={styles.container}>
-        <Button text="Register" onPress={() => null} />
+        <Button text="Login" onPress={() => null} />
         <Divider />
         <SocialMedia />
-        <Pressable onPress={() => {
-          navigation.reset({
-            index: 0,
-            routes: [{ name: "Login" }],
-          });
-        }}>
+        <Pressable
+          onPress={() => {
+            navigation.reset({
+              index: 0,
+              routes: [{ name: "RegisterMain" }],
+            });
+          }}
+        >
           <Text style={styles.bottomText}>
-            Already have an account? <Text style={styles.loginLink}>Login</Text>
+            Don't have an account yet? <Text style={styles.loginLink}>Register</Text>
           </Text>
         </Pressable>
       </View>
@@ -97,5 +85,12 @@ const styles = StyleSheet.create({
   loginLink: {
     color: "#C58BF2",
   },
+  forget: {
+    color: "grey",
+    textDecorationLine: "underline",
+    textAlign: "center",
+    paddingTop: 10,
+    fontSize: 13,
+  },
 });
-export default RegisterMain;
+export default Login;
