@@ -16,17 +16,18 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           
+          
+          
           <Stack.Screen
-            name="RegisterMain"
-            component={RegisterMain}
+            name="Welcome"
+            component={Welcome}
             options={{
               headerShown: false,
             }}
           />
-          
           <Stack.Screen
-            name="CompleteProfile"
-            component={CompleteProfile}
+            name="OnboardingScreens"
+            component={Swiper}
             options={{
               headerShown: false,
             }}
@@ -39,15 +40,16 @@ export default function App() {
             }}
           />
           <Stack.Screen
-            name="Welcome"
-            component={Welcome}
+            name="RegisterMain"
+            component={RegisterMain}
             options={{
               headerShown: false,
             }}
           />
+          
           <Stack.Screen
-            name="OnboardingScreens"
-            component={Swiper}
+            name="CompleteProfile"
+            component={CompleteProfile}
             options={{
               headerShown: false,
             }}

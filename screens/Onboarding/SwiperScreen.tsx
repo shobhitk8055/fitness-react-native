@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-const SwiperScreen = () => {
+const SwiperScreen = ({ navigation }) => {
   const swiperRef = useRef<Swiper>(null);
 
   return (
@@ -47,7 +47,11 @@ const SwiperScreen = () => {
       <Onboarding1 onPress={() => swiperRef?.current?.scrollBy(1)} />
       <Onboarding2 onPress={() => swiperRef?.current?.scrollBy(1)} />
       <Onboarding3 onPress={() => swiperRef?.current?.scrollBy(1)} />
-      <Onboarding4 onPress={() => null} />
+      <Onboarding4
+        onPress={() => {
+          navigation.navigate("RegisterMain");
+        }}
+      />
     </Swiper>
   );
 };

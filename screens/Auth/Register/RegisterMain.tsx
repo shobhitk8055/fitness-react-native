@@ -47,7 +47,9 @@ const RegisterMain = ({ navigation }) => {
         </View>
       </View>
       <View style={styles.container}>
-        <Button text="Register" onPress={() => null} />
+        <Button text="Register" onPress={() => {
+          navigation.navigate("CompleteProfile");
+        }} />
         <Divider />
         <SocialMedia />
         <Pressable onPress={() => {
