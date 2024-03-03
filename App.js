@@ -15,16 +15,18 @@ export default function App() {
     <PaperProvider>
       <NavigationContainer>
         <Stack.Navigator>
+          
           <Stack.Screen
-            name="CompleteProfile"
-            component={CompleteProfile}
+            name="RegisterMain"
+            component={RegisterMain}
             options={{
               headerShown: false,
             }}
           />
+          
           <Stack.Screen
-            name="RegisterMain"
-            component={RegisterMain}
+            name="CompleteProfile"
+            component={CompleteProfile}
             options={{
               headerShown: false,
             }}

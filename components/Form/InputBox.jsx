@@ -1,5 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  KeyboardAvoidingView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 
 const InputBox = ({
   placeholder,
@@ -8,26 +14,33 @@ const InputBox = ({
   Icon,
   error = false,
   secureTextEntry = false,
+  keyboardType = undefined,
 }) => {
   return (
-    <View style={styles.inputBox}>
-      <TextInput
-        secureTextEntry={secureTextEntry}
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={value}
-        placeholder={placeholder}
-      />
-      <View style={styles.icon}><Icon /></View>
-      {error && <Text style={styles.error}>{error}</Text>}
-    </View>
+    <KeyboardAvoidingView>
+      <View style={styles.inputBox}>
+        <TextInput
+          secureTextEntry={secureTextEntry}
+          style={styles.input}
+          onChangeText={onChangeText}
+          value={value}
+          placeholder={placeholder}
+          keyboardType={keyboardType}
+        />
+
+        <View style={styles.icon}>
+          <Icon />
+        </View>
+        {error && <Text style={styles.error}>{error}</Text>}
+      </View>
+    </KeyboardAvoidingView>
   );
 };
 
 const styles = StyleSheet.create({
   inputBox: {
     width: "100%",
-    paddingTop: 20
+    paddingTop: 20,
   },
   input: {
     height: 48,
@@ -37,9 +50,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   icon: {
-    position: 'absolute',
+    position: "absolute",
     top: 32,
-    left: 15
+    left: 15,
   },
   error: {
     color: "red",
